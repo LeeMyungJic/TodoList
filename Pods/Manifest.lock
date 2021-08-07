@@ -1,0 +1,24 @@
+PODS:
+  - JJFloatingActionButton (2.5.0)
+  - PagingKit (1.18.0)
+  - TweeTextField (1.6.3)
+
+DEPENDENCIES:
+  - JJFloatingActionButton
+  - PagingKit
+  - TweeTextField
+
+SPEC REPOS:
+  trunk:
+    - JJFloatingActionButton
+    - PagingKit
+    - TweeTextField
+
+SPEC CHECKSUMS:
+  JJFloatingActionButton: fdc3aefb0f28f04d0f988fa25d5fac97028a9ea7
+  PagingKit: 366cc22d74f4de7768bb31d8fcd49182f53e3ce7
+  TweeTextField: 47bf8e7f0433364a7f7e119c45e7f278ea50eb62
+
+PODFILE CHECKSUM: c76081885b7c22c0bb1f4fe113c812ecabdb78c0
+
+COCOAPODS: 1.10.1
