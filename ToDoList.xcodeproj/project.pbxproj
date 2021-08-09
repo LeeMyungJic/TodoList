@@ -23,6 +23,9 @@
 		DA20D99B26BE87500072A380 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20D99A26BE87500072A380 /* HistoryViewController.swift */; };
 		DA20D99D26BE8F020072A380 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20D99C26BE8F020072A380 /* AddToDoViewController.swift */; };
 		DA20D9A326BE94CD0072A380 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20D9A226BE94CD0072A380 /* Todo.swift */; };
+		DAEBE48E26C10F8F00DB0B32 /* GroupedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBE48D26C10F8F00DB0B32 /* GroupedSection.swift */; };
+		DAEBE49026C1150E00DB0B32 /* DeliveryDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBE48F26C1150E00DB0B32 /* DeliveryDataProtocol.swift */; };
+		DAEBE49326C1168D00DB0B32 /* ManageDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBE49226C1168D00DB0B32 /* ManageDate.swift */; };
 		DBAAC49D6A595B88E69BADD6 /* Pods_ToDoList_ToDoListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F9D69F2CAFCA66CB3D21B6 /* Pods_ToDoList_ToDoListUITests.framework */; };
 		F7E5907ACF477C8D7510C0E4 /* Pods_ToDoListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB691556E0B3FDF246C152CC /* Pods_ToDoListTests.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +77,9 @@
 		DA20D99A26BE87500072A380 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		DA20D99C26BE8F020072A380 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		DA20D9A226BE94CD0072A380 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		DAEBE48D26C10F8F00DB0B32 /* GroupedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedSection.swift; sourceTree = "<group>"; };
+		DAEBE48F26C1150E00DB0B32 /* DeliveryDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDataProtocol.swift; sourceTree = "<group>"; };
+		DAEBE49226C1168D00DB0B32 /* ManageDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDate.swift; sourceTree = "<group>"; };
 		F012EE1C065E34BA08868DDB /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +159,7 @@
 		DA20D95F26BE7D000072A380 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				DAEBE49126C1167C00DB0B32 /* Function */,
 				DA20D9A126BE94C40072A380 /* Medel */,
 				DA20D99726BE872E0072A380 /* ViewControllers */,
 				DA20D99026BE7EF90072A380 /* Views */,
@@ -163,6 +170,8 @@
 				DA20D96B26BE7D020072A380 /* LaunchScreen.storyboard */,
 				DA20D96E26BE7D020072A380 /* Info.plist */,
 				DA20D99526BE83190072A380 /* MenuCell.swift */,
+				DAEBE48D26C10F8F00DB0B32 /* GroupedSection.swift */,
+				DAEBE48F26C1150E00DB0B32 /* DeliveryDataProtocol.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -211,6 +220,14 @@
 				DA20D9A226BE94CD0072A380 /* Todo.swift */,
 			);
 			path = Medel;
+			sourceTree = "<group>";
+		};
+		DAEBE49126C1167C00DB0B32 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				DAEBE49226C1168D00DB0B32 /* ManageDate.swift */,
+			);
+			path = Function;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,10 +470,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAEBE49326C1168D00DB0B32 /* ManageDate.swift in Sources */,
 				DA20D96526BE7D000072A380 /* ViewController.swift in Sources */,
 				DA20D96126BE7D000072A380 /* AppDelegate.swift in Sources */,
 				DA20D99626BE83190072A380 /* MenuCell.swift in Sources */,
 				DA20D9A326BE94CD0072A380 /* Todo.swift in Sources */,
+				DAEBE48E26C10F8F00DB0B32 /* GroupedSection.swift in Sources */,
+				DAEBE49026C1150E00DB0B32 /* DeliveryDataProtocol.swift in Sources */,
 				DA20D99B26BE87500072A380 /* HistoryViewController.swift in Sources */,
 				DA20D99D26BE8F020072A380 /* AddToDoViewController.swift in Sources */,
 				DA20D96326BE7D000072A380 /* SceneDelegate.swift in Sources */,

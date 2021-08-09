@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import TweeTextField
 
 class AddToDoViewController: UIViewController {
 
     @IBOutlet weak var subView: UIView!
+    @IBOutlet weak var todoLabel: TweeActiveTextField!
+    @IBOutlet weak var dateLabel: UITextField!
+    
+    weak var delegate: DeliveryDataProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +30,8 @@ class AddToDoViewController: UIViewController {
     @IBAction func didTabCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTabAddBtn(_ sender: Any) {
+        delegate?.deliveryData(Todo(todo: self.todoLabel.text!, date: parseDate(self.dateLabel.text!)))
     }
-    */
-
+    
 }

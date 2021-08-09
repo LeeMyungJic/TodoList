@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     var menus = ["1", "2"]
     
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var addButton: UIButton!
     var dataSource = [(menu: String, content: UIViewController)]() {
         didSet{
             menuViewController.reloadData()
@@ -32,7 +31,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPagingController()
-        setAddButton()
         setContentView()
         
     }
@@ -51,10 +49,6 @@ class ViewController: UIViewController {
         }
     }
     
-    fileprivate func setAddButton() {
-        addButton.layer.cornerRadius = addButton.frame.width/2
-    }
-    
     fileprivate func setContentView() {
         contentView.layer.borderWidth = 1.2
         contentView.layer.borderColor = #colorLiteral(red: 0.2457507253, green: 0.2251502872, blue: 0.9558088183, alpha: 1)
@@ -70,15 +64,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTabAddBtn(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if #available(iOS 13.0, *) {
-            let popup = storyboard.instantiateViewController(identifier: "AddToDoViewController") as! AddToDoViewController
-            popup.modalTransitionStyle = .crossDissolve
-            popup.modalPresentationStyle = .overFullScreen
-            
-            self.present(popup, animated: false)
-        } else {
-        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        if #available(iOS 13.0, *) {
+//            let popup = storyboard.instantiateViewController(identifier: "AddToDoViewController") as! AddToDoViewController
+//            popup.modalTransitionStyle = .crossDissolve
+//            popup.modalPresentationStyle = .overFullScreen
+//
+//            self.present(popup, animated: false)
+//        } else {
+//        }
     }
     
     

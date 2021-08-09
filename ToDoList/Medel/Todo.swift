@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Todo {
+struct TodoList: Codable {
+    var month: Date
+    var todoList: [Todo]
+}
+
+struct Todo: Codable {
     let todo: String
-    let data: String
+    let date: Date
 }
