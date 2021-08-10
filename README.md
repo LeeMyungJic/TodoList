@@ -144,4 +144,4 @@
 
 #### PagingKit를 사용하여 메인 뷰 구성 (상단 메뉴 및 메뉴에 따른 뷰 전환)
 
-#### <img src="/Users/mingjic2/Desktop/2021-08-10 16.48.36.gif" alt="2021-08-10 16.48.36" style="zoom:25%;" />
+![2021-08-10 16 48 36](https://user-images.githubusercontent.com/44960073/128829875-4682dcf3-6c5c-44b5-8578-d8b128d5f06c.gif)
