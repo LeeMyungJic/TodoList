@@ -4,10 +4,62 @@
 
 ## 사용 기술
 
-- #### PagingKit
+- #### PagingKit, TweeTextField
 
 - #### Delegate Pattern, Property Observer
 
+
+
+## 처리해야 할 것
+
+- #### Todo Array 인덱스와 TableView Section 인덱스가 다름(당연) -> 맞춰서 Todo 데이터 삭제 시 테이블뷰 셀에서도 제거하기...
+
+- #### nil 값 validation
+
+- #### Todo Array를 Appdelegation으로 옮기기
+
+
+
+## 2020 08 11
+
+- #### Todo Detail 팝업 데이터 전달
+
+- #### HistoryViewController 구현
+
+- #### tableView Section 별 row에 접근 방법 터득(?)
+
+  ~~~ swift
+  // 선택된 아이템 섹션 저장
+  var selectedSection = indexPath.section
+  // 선택된 아이템 로우 저장
+  var selectedIndex = indexPath.row
+  
+  ...
+  
+  // 접근
+  todo[selectedSection].rows[selectedIndex]
+  ~~~
+
+- #### Dele 파라미터 타입을 Any로 변경하여 두 컨트롤러에서 사용
+
+  ~~~ swift
+  func deliveryData(_ data: Any) {
+    			// Todo Detail 팝업 뷰에서 완료 버튼을 클릭하였을 경우
+          if data as? Bool == true {
+              AppDelegate.todoHistory.append(todo[selectedSection].rows[selectedIndex])
+            	// 수정해야할 부분 ㅠㅠ
+              self.todoData.remove(at: todo[selectedSection].rows[selectedIndex].index)
+              changeTableView()
+          }
+    			// Todo 추가 팝업 뷰에서 확인 버튼을 클릭하였을 경우
+          else {
+              let getData = data as! Todo
+              
+              self.todoData.append(Todo(todo: getData.todo, date: getData.date, index: todoData.count))
+              changeTableView()
+          }
+  }
+  ~~~
 
 
 ## 2020 08 09
