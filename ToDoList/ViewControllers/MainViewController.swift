@@ -31,7 +31,9 @@ class MainViewController: UITableViewController, DeliveryDataProtocol {
         }
     }
     
-    var todoData = [Todo]() 
+    var todoData = [Todo]()
+    var selectedIndex = 0
+    var selectedSection = 0
    
     @IBAction func didTabAddButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -53,7 +55,7 @@ class MainViewController: UITableViewController, DeliveryDataProtocol {
         super.viewDidLoad()
         
         getTodoList()
-        self.todo = GroupedSection.group(rows: todoData, by: { firstDayOfMonth(date: $0.date) })
+        self.todo = GroupedSection.group(rows: todoData, by: { firstDayOfMonth(date: parseDate($0.date)) })
         self.todo.sort { lhs, rhs in lhs.sectionItem < rhs.sectionItem }
 
         // Do any additional setup after loading the view.
@@ -85,6 +87,11 @@ class MainViewController: UITableViewController, DeliveryDataProtocol {
         return section.rows.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedSection = indexPath.section
+        selectedIndex = indexPath.row
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoCell
 
@@ -92,7 +99,7 @@ class MainViewController: UITableViewController, DeliveryDataProtocol {
         let todoData = section.rows[indexPath.row].todo
         
         cell.delete = { [unowned self] in
-            self.showDeleteWarningMessage(index: indexPath.row)
+            self.showDeleteWarningMessage(section: indexPath.section, row: indexPath.row)
         }
         
         cell.todoLabel.text = todoData
@@ -104,11 +111,28 @@ class MainViewController: UITableViewController, DeliveryDataProtocol {
         saveTodoList()
     }
     
-    fileprivate func showDeleteWarningMessage(index: Int) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let id = segue.identifier, "detail" == id {
+            if let controller = segue.destination as? TodoDetailViewController {
+                    if let indexPath = tableView.indexPathForSelectedRow {
+                        let section = self.todo[indexPath.section]
+                        let todoData = section.rows[indexPath.row]
+                        
+                        controller.getDate = todoData.date
+                        controller.getTodo = todoData.todo
+                        controller.delegate = self
+                
+                }
+            }
+        }
+    }
+    
+    fileprivate func showDeleteWarningMessage(section: Int, row: Int) {
         let msgalert = UIAlertController(title: "주의", message: "상품을 삭제하시겠습니까?", preferredStyle: .alert)
         
         let YES = UIAlertAction(title: "확인", style: .default, handler: { (action) -> Void in
-            self.todoData.remove(at: index)
+            self.todoData.remove(at: self.todo[section].rows[row].index)
             self.changeTableView()
         })
         let CANCEL = UIAlertAction(title: "취소", style: .default)
@@ -130,14 +154,23 @@ class MainViewController: UITableViewController, DeliveryDataProtocol {
     }
     
     fileprivate func changeTableView() {
-        self.todo = GroupedSection.group(rows: todoData, by: { firstDayOfMonth(date: $0.date) })
+        self.todo = GroupedSection.group(rows: todoData, by: { firstDayOfMonth(date: parseDate($0.date)) })
         self.todo.sort { lhs, rhs in lhs.sectionItem < rhs.sectionItem }
         self.tableView.reloadData()
     }
     
     
-    func deliveryData(_ data: Todo) {
-        self.todoData.append(data)
-        changeTableView()
+    func deliveryData(_ data: Any) {
+        if data as? Bool == true {
+            AppDelegate.todoHistory.append(todo[selectedSection].rows[selectedIndex])
+            self.todoData.remove(at: todo[selectedSection].rows[selectedIndex].index)
+            changeTableView()
+        }
+        else {
+            let getData = data as! Todo
+            
+            self.todoData.append(Todo(todo: getData.todo, date: getData.date, index: todoData.count))
+            changeTableView()
+        }
     }
 }

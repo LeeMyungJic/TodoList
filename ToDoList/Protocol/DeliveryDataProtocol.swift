@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DeliveryDataProtocol: class {
-    func deliveryData(_ data: Todo)
+    func deliveryData(_ data: Any)
 }

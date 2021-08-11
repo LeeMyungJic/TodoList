@@ -14,5 +14,4 @@ struct GroupedSection<SectionItem : Hashable, RowItem> {
         let groups = Dictionary(grouping: rows, by: criteria)
         return groups.map(GroupedSection.init(sectionItem:rows:))
     }
-
 }

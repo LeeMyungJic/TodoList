@@ -26,6 +26,8 @@
 		DAEBE48E26C10F8F00DB0B32 /* GroupedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBE48D26C10F8F00DB0B32 /* GroupedSection.swift */; };
 		DAEBE49026C1150E00DB0B32 /* DeliveryDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBE48F26C1150E00DB0B32 /* DeliveryDataProtocol.swift */; };
 		DAEBE49326C1168D00DB0B32 /* ManageDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBE49226C1168D00DB0B32 /* ManageDate.swift */; };
+		DAEBE49726C269E800DB0B32 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBE49626C269E800DB0B32 /* CustomButton.swift */; };
+		DAEBE49D26C2738A00DB0B32 /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBE49C26C2738A00DB0B32 /* TodoDetailViewController.swift */; };
 		DBAAC49D6A595B88E69BADD6 /* Pods_ToDoList_ToDoListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F9D69F2CAFCA66CB3D21B6 /* Pods_ToDoList_ToDoListUITests.framework */; };
 		F7E5907ACF477C8D7510C0E4 /* Pods_ToDoListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB691556E0B3FDF246C152CC /* Pods_ToDoListTests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		DAEBE48D26C10F8F00DB0B32 /* GroupedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedSection.swift; sourceTree = "<group>"; };
 		DAEBE48F26C1150E00DB0B32 /* DeliveryDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDataProtocol.swift; sourceTree = "<group>"; };
 		DAEBE49226C1168D00DB0B32 /* ManageDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDate.swift; sourceTree = "<group>"; };
+		DAEBE49626C269E800DB0B32 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		DAEBE49C26C2738A00DB0B32 /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
 		F012EE1C065E34BA08868DDB /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +163,8 @@
 		DA20D95F26BE7D000072A380 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				DAEBE49526C269DF00DB0B32 /* UI */,
+				DAEBE49426C264F600DB0B32 /* Protocol */,
 				DAEBE49126C1167C00DB0B32 /* Function */,
 				DA20D9A126BE94C40072A380 /* Medel */,
 				DA20D99726BE872E0072A380 /* ViewControllers */,
@@ -171,7 +177,6 @@
 				DA20D96E26BE7D020072A380 /* Info.plist */,
 				DA20D99526BE83190072A380 /* MenuCell.swift */,
 				DAEBE48D26C10F8F00DB0B32 /* GroupedSection.swift */,
-				DAEBE48F26C1150E00DB0B32 /* DeliveryDataProtocol.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				DA20D99826BE87470072A380 /* MainViewController.swift */,
 				DA20D99A26BE87500072A380 /* HistoryViewController.swift */,
 				DA20D99C26BE8F020072A380 /* AddToDoViewController.swift */,
+				DAEBE49C26C2738A00DB0B32 /* TodoDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -228,6 +234,22 @@
 				DAEBE49226C1168D00DB0B32 /* ManageDate.swift */,
 			);
 			path = Function;
+			sourceTree = "<group>";
+		};
+		DAEBE49426C264F600DB0B32 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DAEBE48F26C1150E00DB0B32 /* DeliveryDataProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DAEBE49526C269DF00DB0B32 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DAEBE49626C269E800DB0B32 /* CustomButton.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,9 +500,11 @@
 				DAEBE48E26C10F8F00DB0B32 /* GroupedSection.swift in Sources */,
 				DAEBE49026C1150E00DB0B32 /* DeliveryDataProtocol.swift in Sources */,
 				DA20D99B26BE87500072A380 /* HistoryViewController.swift in Sources */,
+				DAEBE49726C269E800DB0B32 /* CustomButton.swift in Sources */,
 				DA20D99D26BE8F020072A380 /* AddToDoViewController.swift in Sources */,
 				DA20D96326BE7D000072A380 /* SceneDelegate.swift in Sources */,
 				DA20D99926BE87470072A380 /* MainViewController.swift in Sources */,
+				DAEBE49D26C2738A00DB0B32 /* TodoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

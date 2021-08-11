@@ -14,5 +14,6 @@ struct TodoList: Codable {
 
 struct Todo: Codable {
     let todo: String
-    let date: Date
+    let date: String
+    let index: Int
 }
