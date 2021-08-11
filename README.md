@@ -40,7 +40,7 @@
   todo[selectedSection].rows[selectedIndex]
   ~~~
 
-- #### Dele 파라미터 타입을 Any로 변경하여 두 컨트롤러에서 사용
+- #### DeliveryDataProtocol 파라미터 타입을 Any로 변경하여 두 컨트롤러에서 사용
 
   ~~~ swift
   func deliveryData(_ data: Any) {
